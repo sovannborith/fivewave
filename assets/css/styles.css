@@ -206,7 +206,7 @@ img {
   transition: 0.4s;
 }
 .toggle > div {
-  transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-4px, 5px);
 }
 .toggle > div:before {
   opacity: 0;
