@@ -130,18 +130,20 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 64px;
 }
 @media screen and (max-width: 768px) {
   .nav__menu {
     position: fixed;
-    top: var(--header-height);
+    top: 4.5rem;
     right: -100%;
-    width: 80%;
+    width: 100%;
     height: 100%;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.3);
     transition: 0.5s;
     backdrop-filter: blur(10px);
+    z-index: 100;
   }
 }
 .nav__item {
@@ -155,14 +157,63 @@ img {
   color: var(--first-color);
 }
 .nav__logo {
-  color: var(--white-color);
-}
-.nav__toggle {
-  color: var(--white-color);
-  font-size: 1.5rem;
-  cursor: pointer;
+  width: 80px;
+  height: 80px;
 }
 
+.nav__toggle {
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: var(--first-color);
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50%;
+}
+.nav__toggle > div {
+  position: relative;
+  width: 60%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.4s;
+  top: 12px;
+  left: 7px;
+  transition: all 0.4s ease;
+}
+.nav__toggle > div:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 1.5px;
+  background-color: #fff;
+  top: 5px;
+  left: 0;
+  transition: 0.4s;
+}
+
+.nav__toggle > div:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 1.5px;
+  background-color: #fff;
+  top: 10px;
+  left: 0;
+  transition: 0.4s;
+}
+.toggle > div {
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+.toggle > div:before {
+  opacity: 0;
+}
+.toggle > div:after {
+  transform: rotate(90deg) translate(-10px, 0px);
+}
 /*=== Show menu ===*/
 .show {
   right: 0;
